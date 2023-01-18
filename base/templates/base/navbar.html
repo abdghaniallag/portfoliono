@@ -1,6 +1,6 @@
 {% block contennt %}
   <div class="nav-wrapper">
-    <a href="{% url 'home' %}"> 
+    <a href="{% url 'home' %}">
       <div class="dots-wrapper">
         <div id="dot-1" class="browser-dot"></div>
         <div id="dot-2" class="browser-dot"></div>
@@ -10,8 +10,13 @@
 
     <ul id="navigation">
       <li>
-        <a href="{% url 'home' %}#contact">Contact</a>
-      </li> 
+        <a href=" {% url 'home' %}#contact">Contact</a>
+      </li>
+      <li>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'createpost' %} ">Create Post</a>
+        {% endif %}
+      </li>
     </ul>
   </div>
 {% endblock %}
