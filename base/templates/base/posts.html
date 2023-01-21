@@ -1,8 +1,23 @@
 {% extends 'base/main.html' %}
 {% load static %}
-{% block content %}
+{% load crispy_forms_tags %}
+{% block content %}<style type="text/css">
+#div_id_tags > div{
+  max-width: 200px;
+  max-height: 100px;
+  overflow-y: scroll;
+  padding: 5px;
+  margin: 8px;
+}
+</style>
   <div class="main-container">
     <h1>Posts</h1>
+    <div>
+      <form action="" method="get">
+        {{postfilter.form|crispy}}
+        <input class="btn btn-primary" type="submit" value="Search">
+      </form>
+    </div>
     <div class="post-wrapper">
       {% for post in posts %}
         <div>
