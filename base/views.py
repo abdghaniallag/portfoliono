@@ -3,7 +3,7 @@ from django.http import HttpRequest, HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Post, Tag
 from .forms import PostForm
-
+from .filters import PostFilte
 
 def home(request):
     posts = Post.objects.filter(active=True, featured=True)[0:3]
@@ -13,7 +13,9 @@ def home(request):
 
 def posts(request):
     posts = Post.objects.filter(active=True)
-    context = {"posts": posts}
+    postfilter = PostFilte(request.GET, queryset=posts)
+    posts = postfilter.qs
+    context = {"posts": posts,"postfilter":postfilter}
 
     return render(request, 'base/posts.html',  context)
 
