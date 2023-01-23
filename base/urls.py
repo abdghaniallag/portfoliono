@@ -6,11 +6,11 @@ urlpatterns = [
     path('', views.home,name='home'),
     path('index/', views.home,name='home'),
     path('posts/', views.posts,name='posts'),
-    path('post/<str:pk>', views.post,name='post'), 
+    path('post/<slug:slug>', views.post,name='post'), 
     path('profile/', views.profile,name='profile'),
     # CRUD URLS 
     path('createpost/', views.createPost,name='createpost'),
-    path('updatepost/<str:pk>', views.updatepost,name='updatepost'),
-    path('deletepost/<str:pk>', views.deletepost,name='deletepost'),
+    path('updatepost/<slug:slug>', views.updatepost,name='updatepost'),
+    path('deletepost/<slug:slug>', views.deletepost,name='deletepost'),
     path('sendemail/', views.sendEmail,name='sendemail'),
 ]

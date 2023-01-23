@@ -89,7 +89,7 @@
 
     function updateRelatedSelectsOptions(currentSelect, win, objId, newRepr, newId) {
         // After create/edit a model from the options next to the current
-        // select (+ or :pencil:) update ForeignKey PK of the rest of selects
+        // select (+ or :pencil:) update ForeignKey slug of the rest of selects
         // in the page.
 
         const path = win.location.pathname;
