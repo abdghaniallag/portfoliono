@@ -13,6 +13,6 @@ img{
   <h1>{{post.headline}}</h1>
   <h4>{{post.sub_headline}}</h4>
 
-  <p>{{post.body|linebreaks}}</p>
+  <p>{{post.body|safe}}</p>
   </div>
 {% endblock %}

@@ -98,5 +98,5 @@ def sendEmail(request):
                              settings.EMAIL_HOST_USER,
                              ['abdghaniallag@gmail.com'],)
         email.fail_silently = False
-        email.send()
+        email.send() 
     return render(request, 'base/email_template.html')

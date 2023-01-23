@@ -30,10 +30,19 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'crispy_forms',
     'django_filters',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+CKEDITOR_CONFIGS = {
+    'default' : {
+        'toolbar' : 'full',
+        'height' : 300,
+        'width' : '100%',
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -119,7 +128,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Default primary key field type
+CKEDITOR_UPLOAD_PATH = 'upload/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
