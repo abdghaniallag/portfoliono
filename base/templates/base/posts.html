@@ -84,7 +84,7 @@
       e.preventDefault()
       let page = this.dataset.page
       console.log('page: ', page)
-      searchForm.innerHTML += <input value="${page}" name="page" hidden >
+      searchForm.innerHTML += `<input value="${page}" name="page" hidden >`
       searchForm.submit()
     })
   }
